@@ -23,6 +23,7 @@ public class JdbcTemplateTest {
         jdbcTemplate.update("insert into hello values(?, ?)", "Spring", 1);
 
         Long count = jdbcTemplate.queryForObject("select count(*) from hello", Long.class);
+        System.out.println(" Selected count = " + count);
         assertThat(count).isEqualTo(2);
     }
 }

@@ -18,18 +18,25 @@ public class HelloRepositoryTest {
 
     @Test
     void findHelloFailed() {
+
+        System.out.println("\n\nhelloRepository.findHello(Toby)) = " + helloRepository.findHello("Toby")+"\n\n");
+
         assertThat(helloRepository.findHello("Toby")).isNull();
     }
 
     @Test
     void incraseCount() {
+
         assertThat(helloRepository.countOf("Toby")).isEqualTo(0);
+        System.out.println("\n1. helloRepository.countOf(Toby)) = " + helloRepository.countOf("Toby")+"\n");
 
         helloRepository.increaseCount("Toby");
         assertThat(helloRepository.countOf("Toby")).isEqualTo(1);
+        System.out.println("\n2. helloRepository.countOf(Toby)) = " + helloRepository.countOf("Toby")+"\n");
 
         helloRepository.increaseCount("Toby");
         assertThat(helloRepository.countOf("Toby")).isEqualTo(2);
+        System.out.println("\n3. helloRepository.countOf(Toby)) = " + helloRepository.countOf("Toby")+"\n");
     }
 
 }
